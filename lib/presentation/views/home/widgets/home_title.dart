@@ -28,13 +28,14 @@ class HomeTitle extends StatelessWidget {
         Text(
           'MOBILE & WEB',
           // Use 60 for mobile and 80 for desktop <====== #1
+
           style: ktsTitleText.copyWith(
-            fontSize: getValueForScreenType<double>(
-              context: context,
-              mobile: 60,
-              desktop: 80,
-            ),
-          ),
+              fontSize: getValueForScreenType<double>(
+                context: context,
+                mobile: 60,
+                desktop: 80,
+              ),
+              color: Color(0xff0091FB)),
         ),
       ],
     );

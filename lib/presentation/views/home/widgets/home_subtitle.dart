@@ -10,14 +10,13 @@ class HomeSubtitle extends StatelessWidget {
     final children = [
       Text(
         'Build amazing software, the right way.',
-        style: ktsBodyLarge.copyWith(fontWeight: FontWeight.w600),
+        style: ktsBodyLarge.copyWith(
+            fontWeight: FontWeight.w600, color: Color(0xff0091FB)),
       ),
       Text(
         ' Sign up to be notified',
         style: ktsBodyLarge.copyWith(
-          fontWeight: FontWeight.w600,
-          color: Color(0xff0CFF60),
-        ),
+            fontWeight: FontWeight.w600, color: Color(0xff0091FB)),
       )
     ];
 

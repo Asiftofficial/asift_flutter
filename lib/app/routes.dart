@@ -3,12 +3,13 @@
 import 'package:asift_flutter/app/preferences.dart';
 import 'package:asift_flutter/presentation/views/home/home_view.dart';
 import 'package:asift_flutter/presentation/views/login/login_view.dart';
+import 'package:asift_flutter/presentation/views/unknown/unknown_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 const LOGIN_ROUTE = '/';
 const HOME_ROUTE = '/home';
-final preferences = AsiftPreferences();
+final AsiftPreferences preferences = AsiftPreferences();
 
 CustomTransitionPage buildPageWithDefaultTransition<T>({
   required BuildContext context,
@@ -25,12 +26,10 @@ CustomTransitionPage buildPageWithDefaultTransition<T>({
 }
 
 final router = GoRouter(
-    //errorBuilder: (context, state) => NotFoundPage(),
-    /*
+    //errorBuilder: (context, state) => const UnknownView(),
     errorPageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context, state: state, child: NotFoundPage()),
-        */
-    //initialLocation: LOGIN_ROUTE,
+        context: context, state: state, child: const UnknownView()),
+    initialLocation: LOGIN_ROUTE,
     routes: [
       GoRoute(
         name: LOGIN_ROUTE,
@@ -38,14 +37,14 @@ final router = GoRouter(
         builder: (context, state) => const LoginView(),
         pageBuilder: (context, state) => buildPageWithDefaultTransition(
             context: context, state: state, child: const LoginView()),
-        redirect: (context, state) async {
-          final token = await preferences.getToken();
+        // redirect: (context, state) async {
+        //   final token = await preferences.getToken();
 
-          if (token != '') {
-            return HOME_ROUTE;
-          }
-          return null;
-        },
+        //   if (token != '') {
+        //     return HOME_ROUTE;
+        //   }
+        //   return null;
+        // },
       ),
       GoRoute(
         name: HOME_ROUTE,
@@ -53,13 +52,13 @@ final router = GoRouter(
         builder: (context, state) => const HomeView(),
         pageBuilder: (context, state) => buildPageWithDefaultTransition(
             context: context, state: state, child: const HomeView()),
-        redirect: (context, state) async {
-          final token = await preferences.getToken();
+        // redirect: (context, state) async {
+        //   final token = await preferences.getToken();
 
-          if (token == 'token' || token == '') {
-            return LOGIN_ROUTE;
-          }
-          return null;
-        },
+        //   if (token == 'token' || token == '') {
+        //     return LOGIN_ROUTE;
+        //   }
+        //   return null;
+        // },
       ),
     ]);

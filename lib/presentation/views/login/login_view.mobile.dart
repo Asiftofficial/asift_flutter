@@ -1,4 +1,4 @@
-import 'package:asift_flutter/presentation/common/app_colors.dart';
+import 'package:asift_flutter/presentation/views/login/widgets/login_main.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewMobile extends StatelessWidget {
@@ -6,14 +6,8 @@ class LoginViewMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: kcBackgroundColor,
-        body: Center(
-          child: SizedBox(
-            child: Column(
-              children: [],
-            ),
-          ),
-        ));
+    return const Scaffold(
+      body: LoginMain(),
+    );
   }
 }
