@@ -3,7 +3,7 @@ import 'package:asift_flutter/domain/entities/login/login_user.dart';
 import 'package:asift_flutter/domain/repositories/asift_repository.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../../utils/failure.dart';
+import '../../../../utils/failure.dart';
 
 class LoginUseCase {
   final AsiftRepository repository;
